@@ -144,7 +144,7 @@ def build_extraction_dataset(folder, dataset_filename,
             if not sender or not msg:
                 continue
             lines = msg.splitlines()
-            for i in xrange(1, min(SIGNATURE_MAX_LINES,
+            for i in range(1, min(SIGNATURE_MAX_LINES,
                                    len(lines)) + 1):
                 line = lines[-i]
                 label = -1

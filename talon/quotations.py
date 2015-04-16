@@ -168,7 +168,7 @@ def mark_message_lines(lines):
             if splitter:
                 # append as many splitter markers as lines in splitter
                 splitter_lines = splitter.group().splitlines()
-                for j in xrange(len(splitter_lines)):
+                for j in range(len(splitter_lines)):
                     markers[i + j] = 's'
 
                 # skip splitter lines
@@ -327,7 +327,7 @@ def extract_from_html(msg_body):
     html_tree_copy = deepcopy(html_tree)
 
     number_of_checkpoints = html_quotations.add_checkpoint(html_tree, 0)
-    quotation_checkpoints = [False for i in xrange(number_of_checkpoints)]
+    quotation_checkpoints = [False for i in range(number_of_checkpoints)]
     msg_with_checkpoints = html.tostring(html_tree)
 
     h = html2text.HTML2Text()
@@ -369,7 +369,7 @@ def extract_from_html(msg_body):
 
     if lines_were_deleted:
         #collect checkpoints from deleted lines
-        for i in xrange(first_deleted, last_deleted):
+        for i in range(first_deleted, last_deleted):
             for checkpoint in line_checkpoints[i]:
                 quotation_checkpoints[checkpoint] = True
     else:
