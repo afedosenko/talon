@@ -61,7 +61,7 @@ def extract(body, sender):
                 text = delimiter.join(text)
                 if text.strip():
                     return (text, delimiter.join(signature))
-    except Exception, e:
+    except Exception as e:
         log.exception('ERROR when extracting signature with classifiers')
 
     return (body, None)

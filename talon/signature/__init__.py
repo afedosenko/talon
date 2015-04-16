@@ -43,6 +43,6 @@ def initialize():
         extraction.EXTRACTOR = classifier.load(EXTRACTOR_FILENAME,
                                                EXTRACTOR_DATA)
         sys.stdout = so
-    except Exception, e:
+    except Exception as e:
         raise Exception(
             "Failed initializing signature parsing with classifiers", e)

@@ -134,7 +134,7 @@ def extract_from(msg_body, content_type='text/plain'):
             return extract_from_plain(msg_body)
         elif content_type == 'text/html':
             return extract_from_html(msg_body)
-    except Exception, e:
+    except Exception as e:
         log.exception('ERROR extracting message')
 
     return msg_body
