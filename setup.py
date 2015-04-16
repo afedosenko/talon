@@ -68,7 +68,7 @@ def run(command):
 
 
 def python(command):
-    command = '{} {}'.format(sys.executable, command)
+    command = '{} {}'.format('/usr/bin/python3', command)
     run(command)
 
 
