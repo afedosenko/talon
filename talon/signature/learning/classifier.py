@@ -8,16 +8,17 @@ body belongs to the signature.
 import os
 import sys
 
-from PyML import SparseDataSet, SVM
 
 
 def init():
     '''Inits classifier with optimal options.'''
+    from PyML import SVM
     return SVM(C=10, optimization='liblinear')
 
 
 def train(classifier, train_data_filename, save_classifier_filename=None):
     '''Trains and saves classifier so that it could be easily loaded later.'''
+    from PyML import SparseDataSet
     data = SparseDataSet(train_data_filename, labelsColumn=-1)
     classifier.train(data)
     if save_classifier_filename:
@@ -30,6 +31,7 @@ def load(saved_classifier_filename, train_data_filename):
 
     Classifier should be loaded with the same data it was trained against
     """
+    from PyML import SparseDataSet
     train_data = SparseDataSet(train_data_filename, labelsColumn=-1)
     classifier = init()
     classifier.load(saved_classifier_filename, train_data)

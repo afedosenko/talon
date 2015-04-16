@@ -4,7 +4,6 @@ import os
 import logging
 
 import regex as re
-from PyML import SparseDataSet
 
 from talon.constants import RE_DELIMITER
 from talon.signature.constants import (SIGNATURE_MAX_LINES,
@@ -36,6 +35,7 @@ RE_REVERSE_SIGNATURE = re.compile(r'''
 
 def is_signature_line(line, sender, classifier):
     '''Checks if the line belongs to signature. Returns True or False.'''
+    from PyML import SparseDataSet
     data = SparseDataSet([build_pattern(line, features(sender))])
     return classifier.decisionFunc(data, 0) > 0
 

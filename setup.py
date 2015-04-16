@@ -61,8 +61,6 @@ def install_pyml():
 
 
 def run(command):
-    print('!!!!!!!!!!!!!!!!!!!!!!')
-    print(command)
     if os.system(command) != 0:
         raise Exception("Failed '{}'".format(command))
     else:
@@ -104,4 +102,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] in ['develop', 'install']:
         enforce_executable('curl', 'sudo aptitude install curl')
 
-        install_pyml()
+        # install_pyml()
