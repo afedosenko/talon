@@ -20,7 +20,7 @@ setup(name='talon',
       zip_safe=True,
       install_requires=[
           "lxml==2.3.3",
-          "regex==0.1.20110315",
+          "regex",
           "chardet==1.0.1",
           "dnspython==1.11.1",
           "html2text",
