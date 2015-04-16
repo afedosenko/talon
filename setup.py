@@ -60,6 +60,7 @@ def install_pyml():
 
 
 def run(command):
+    print(command)
     if os.system(command) != 0:
         raise Exception("Failed '{}'".format(command))
     else:
