@@ -50,8 +50,8 @@ def install_pyml():
     pyml_srcidr = 'PyML-0.7.9'
 
     # see if PyML tarball needs to be fetched:
-    if not dir_exists(pyml_srcidr):
-        run("curl %s | tar -xz" % pyml_tarball)
+    # if not dir_exists(pyml_srcidr):
+    run("curl %s | tar -xz" % pyml_tarball)
 
     # compile&install:
     with cd(pyml_srcidr):
