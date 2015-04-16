@@ -80,7 +80,7 @@ def enforce_executable(name, install_info):
 
 
 def pip(command):
-    command = '{} {}'.format(find_executable('pip'), command)
+    command = '{} {}'.format(find_executable('pip3'), command)
     run(command)
 
 
