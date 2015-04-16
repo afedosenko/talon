@@ -46,7 +46,7 @@ def install_pyml():
     # install numpy first
 
     pyml_tarball = (
-        'https://www.dropbox.com/s/q0o0frp0gv9zzqf/PyML-0.7.9.1.zip?dl=1')
+        'https://www.dropbox.com/s/6auzyr140f32biy/PyML-0.7.9.1.zip?dl=1')
     pyml_srcidr = 'PyML-0.7.9.1'
 
     # see if PyML tarball needs to be fetched:
