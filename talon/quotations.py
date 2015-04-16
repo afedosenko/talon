@@ -153,7 +153,7 @@ def mark_message_lines(lines):
     >>> mark_message_lines(['answer', 'From: foo@bar.com', '', '> question'])
     'tsem'
     """
-    markers = bytearray(len(lines))
+    markers = deepcopy(lines)
     i = 0
     while i < len(lines):
         if not lines[i].strip():
@@ -193,6 +193,8 @@ def process_marked_lines(lines, markers, return_flags=[False, -1, -1]):
                     last_deleted_line]
     """
     # if there are no splitter there should be no markers
+    markers = ''.join(markers)
+
     if 's' not in markers and not re.search('(me*){3}', markers):
         markers = markers.replace('m', 't')
 
@@ -383,7 +385,7 @@ def extract_from_html(msg_body):
         html_tree_copy, 0, quotation_checkpoints
     )
 
-    return html.tostring(html_tree_copy)
+    return html.tostring(html_tree_copy).decode('utf-8')
 
 
 def is_splitter(line):
