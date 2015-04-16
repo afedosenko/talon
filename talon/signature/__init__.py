@@ -22,7 +22,7 @@ trained against, don't forget to regenerate:
 
 import os
 import sys
-from cStringIO import StringIO
+from io import StringIO
 
 from . import extraction
 from . extraction import extract
