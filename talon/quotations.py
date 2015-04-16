@@ -335,7 +335,7 @@ def extract_from_html(msg_body):
 
     # html2text adds unnecessary star symbols. Remove them.
     # Mask star symbols
-    msg_with_checkpoints = msg_with_checkpoints.replace('*', '3423oorkg432')
+    msg_with_checkpoints = msg_with_checkpoints.decode('utf-8').replace('*', '3423oorkg432')
     plain_text = h.handle(msg_with_checkpoints)
     # Remove created star symbols
     plain_text = plain_text.replace('*', '')
