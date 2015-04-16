@@ -47,11 +47,12 @@ def install_pyml():
 
     pyml_tarball = (
         'https://www.dropbox.com/s/qm8tzovr0y2p4cv/PyML-0.7.9.2.tar.gz?dl=1')
-    pyml_srcidr = 'PyML-0.7.9.2'
+    pyml_srcidr = 'PyML-0.7.9'
 
     # see if PyML tarball needs to be fetched:
-    if not dir_exists(pyml_srcidr):
-        run("curl %s | tar -xz" % pyml_tarball)
+    # if not dir_exists(pyml_srcidr):
+    run("wget %s" % pyml_tarball)
+    run("tar -xvf PyML-0.7.9.2.tar.gz?dl=1")
 
     # compile&install:
     with cd(pyml_srcidr):
